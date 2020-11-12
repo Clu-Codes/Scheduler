@@ -5,19 +5,6 @@
 // Use jQuery with blur, onChange, and focus to add the ability to update tasks within the planner and have them save 
 // Use Iconic for icons & Google Fonts for the fonts.
 
-// Display timer - cite: https://stackoverflow.com/questions/10590461/dynamic-date-and-time-with-moment-js-and-setinterval
-// var update = function () {
-//     date = moment(new Date())
-//     currentDay.html(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
-// };
-
-// $(document).ready(function(){
-//     currentDay = $('#currentDay')
-//     update();
-//     setInterval(update, 1000);
-// });
-
-
 var getTime = function() {
     var date = moment(new Date());
     $("#currentDay").html(date.format("dddd, MMMM Do YYYY, h:mm:ss a"));
