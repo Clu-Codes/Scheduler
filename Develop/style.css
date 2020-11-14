@@ -10,7 +10,12 @@ textarea{
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  /* transform: translateY(-32px); */
 }
 
 .jumbotron {
@@ -28,6 +33,7 @@ textarea{
 .time-block{
   text-align: center;
   border-radius: 15px;
+  height: 80px;
 }
 
 .row {
@@ -36,6 +42,12 @@ textarea{
   border-top: 1px solid white;;
 }
 
+/* .form-group {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  
+} */
 .hour {
   background-color: #ffffff;
   color: #000000;
@@ -68,4 +80,7 @@ textarea{
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+.col-10 {
+  padding: 0
 }
