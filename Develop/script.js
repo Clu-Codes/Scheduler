@@ -25,6 +25,51 @@ var colorTimeBlock = function() {
     }
 };
 
+
+
+var getTime = function() {
+    var date = moment(new Date());
+    $("#currentDay").html(date.format("dddd, MMMM Do YYYY, h:mm:ss a"));
+
+    colorTimeBlock();
+    return date;
+};
+
+$(document).ready(function() {
+    getTime();
+    setInterval(getTime, 1000);
+});
+
+taskObj = {}
+
+function Events(time, task) {
+    this.time = time;
+    this.task = task;
+}
+
+
+// Use event delegation via targeting container. Once something has changed within the text area
+$(".container").on("click", ".saveBtn", function() {
+    var time = $(".col-1")
+        .closest(".hour")
+        .val();
+    console.log(time);    
+    var task = $("textarea")
+        .val()
+        .trim();
+
+console.log(task);
+});
+
+
+
+var saveTask = function() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+
+
+
 // var colorTimeBlock = function() {
 //     var checkTime = new Date().getHours() - 5;
 //     console.log(checkTime);
@@ -42,37 +87,6 @@ var colorTimeBlock = function() {
 // $(document).ready(function() {
 //     colorTimeBlock();
 // });
-
-var getTime = function() {
-    var date = moment(new Date());
-    $("#currentDay").html(date.format("dddd, MMMM Do YYYY, h:mm:ss a"));
-
-    colorTimeBlock();
-    return date;
-};
-// console.log(getTime().hour());
-$(document).ready(function() {
-    getTime();
-    setInterval(getTime, 1000);
-});
-
-$(".col-10").on("blur", function() {
-    var text = $(this)
-        .text()
-        .trim();
-    saveTask(text);
-});
-
-
-
-var saveTask = function() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-}
-
-
-
-
-
 
 
 
