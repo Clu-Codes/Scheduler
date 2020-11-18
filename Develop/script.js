@@ -7,7 +7,10 @@ var saveTask = function () {
 
 // put the items in localStorage into my array
 var loadTask = function() {
-    tasks = JSON.parse(localStorage.getItem("localStorageTasks"));
+    if (JSON.parse(localStorage.getItem("localStorageTasks")) !== null) {
+        tasks = JSON.parse(localStorage.getItem("localStorageTasks"));
+    }
+    
     
     // iterate through each element, checking if the objData matches. If so, add the text in objTask to that element. 
     tasks.forEach((element, index) => {
